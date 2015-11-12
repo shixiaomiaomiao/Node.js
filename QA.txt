@@ -11,3 +11,8 @@ Could not open a connection to your authentication agent.
 
 Q2：
 报warning : Permanently added 'github.com xxxxx'(RSA) to the list of konwn hosts.
+
+好吧，原来最最主要的错误是： 我在github的仓库上add key的时候，没有勾选write acess，所以报错，说我只有read only的权利。
+现在能够上传了，不过老是报错
+Q2是什么鬼？
+
