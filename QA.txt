@@ -16,3 +16,11 @@ Q2：
 现在能够上传了，不过老是报错
 Q2是什么鬼？
 
+生成ssh key的步骤：
+1. ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+2. add your key to the ssh-agent
+(1)打开ssh agent ： ssh-agent -s
+(2)增加key ： ssh-add id_rsa的地址
+
+还有要在github的setting中deploy key
+
