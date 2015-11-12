@@ -1,0 +1,13 @@
+Q1: 
+命令： git push -u origin master
+ERROR : The key you are authenticcating with has been marked as read only.
+fatal : Could not read from remote repository.
+
+https://help.github.com/articles/generating-ssh-keys/
+
+在add your SSH key to the ssh-agent时报错：
+Could not open a connection to your authentication agent.
+原来是 我的id_rsa的地址没有打出来
+
+Q2：
+报warning : Permanently added 'github.com xxxxx'(RSA) to the list of konwn hosts.
