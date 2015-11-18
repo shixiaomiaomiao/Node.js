@@ -24,3 +24,24 @@ Q2是什么鬼？
 
 还有要在github的setting中deploy key
 
+Q3:
+用的是node.js版本是4.2.2版本，在windows 7,64位的操作系统，
+全局安装express以后（npm install -g express），不能执行express命令！
+A3:原因是在windows版本下，要安装express-generator，才能执行express命令。
+npm install -g express-generator;
+
+Q4:在用express搭建的app.js，用supervisor监控的时候报错：
+执行的命令是： supervisor app.js
+然后不停的重复报错：
+Starting child process with 'node app.js'
+Program node app.js exited with code 0
+
+重新用express -e test建一个网站框架，
+它的提示是： 
+install dependencies: cd test && npm start
+run the app : SET DEBUG=test：* & npm start
+
+A4:原来是express4版本从node app.js改为npm start，所有想要用supervisor监听端口，就得相应的改为
+supervisor bin/www
+解决！漂亮！
+
