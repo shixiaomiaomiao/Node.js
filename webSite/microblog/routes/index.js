@@ -1,34 +1,47 @@
 var express = require('express');
 var router = express.Router();
-var util = require("util");
-var users = {
-	'shixiaomiao':{
-		name: "miao",
-		website : "www.baidu.com"
-	}
-	
-}
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-router.all('/user/:username', function(req, res, next) {
-  console.log("All methods captured!");
-  if (users[req.params.username]) {
-	  next();
-  }
-  else
-  {
-	  next(new Error(req.params.username + 'does not exist.'))
-  }
+
+/* GET user page.*/
+router.get('/u/:user', function(req, res, next) {
+  res.render('user',{})
 });
 
-router.get('/user/:username',function(req,res,next) {
-	res.send(JSON.stringify(users[req.params.username]));
-})
+/* GET publish page.*/
+router.post('/post', function(req, res, next) {
+  res.render('post',{})
+});
 
-router.put('/user/:username',function(req,res,next) {
-	res.send("Done!");
-})
+/* GET register page.*/
+router.get('/reg', function(req, res, next) {
+  res.render('reg',{title:"用户注册"})
+});
+/* GET doRegister page.*/
+router.post('/reg', function(req, res, next) {
+  //检验用户两次输入的口令是否一致
+  if( req.body['password-repeat'] != req.body['password'])
+  {
+	  req.flash('error',"两次输入的口令不一致！") 
+	  return res.redirect('/reg');
+  }
+  
+});
+
+/* GET login page.*/
+router.get('/login', function(req, res, next) {
+  res.render("")
+});
+/* GET doLogin page.*/
+router.post('/login', function(req, res, next) {
+  res.render('doLogin',{})
+});
+/* GET logout page.*/
+router.post('/logout', function(req, res, next) {
+  res.render('logout',{})
+});
 
 module.exports = router;

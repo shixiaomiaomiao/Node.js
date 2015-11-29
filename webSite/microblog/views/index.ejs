@@ -1,11 +1,64 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title %>- Microblog</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/blog.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+	<style type = "text/css">
+	body {
+		padding-top: 0px;
+		padding-bottom : 40px;
+	}
+	</style>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="nav blog-nav">
+          <a class="nav-link active" href="#">首页</a>
+          <a class="nav-link" href="/login">登录</a>
+          <a class="nav-link" href="/reg">注册</a>
+        </nav>
+      </div>
+    </div>
+	
+	<div id = "container" class = "container">
+		<div class = "jumbotron">
+			<h1>欢迎来到Microblog</h1>
+			<p>Microblog是一个基于Node.js的微博系统！</p>
+			<p>
+				<a class = "btn btn-primary " href = "/login">登录</a>
+				<a class = "btn btn-secondary" href = "/ref">注册</a>
+			</p>
+		</div>
+		
+		<div class = "row">
+			<div class = "col-md-4">
+				<h2>F说：</h2>
+				<p>汪汪汪。。。</p>
+			</div>
+			
+			<div class = "col-md-4">
+				<h2>S说：</h2>
+				<p>喵喵喵。。。</p>
+			</div>
+			
+			<div class = "col-md-4">
+				<h2>We说：</h2>
+				<p>Happiness!</p>
+			</div>
+		</div>
+		
+		<hr />
+		<footer>
+			<p><a href = "javascript:;" target = "_blank">施小喵</a></p>
+		</footer>
+	</div>
   </body>
+  <script src = "/javascripts/jquery.js"></script>
+  <script src = "/javascripts/bootstrap.js"></script>
 </html>
